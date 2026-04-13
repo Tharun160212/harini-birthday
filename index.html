@@ -244,7 +244,29 @@ function blowCandle(){
   document.getElementById('flame').style.display='none';
   setTimeout(()=> next(3),800);
 }
+function createFirework(){
+  const count = 20;
+  const centerX = window.innerWidth/2;
+  const centerY = window.innerHeight/3;
 
+  for(let i=0;i<count;i++){
+    const fw = document.createElement('div');
+    fw.className='firework';
+    const angle = Math.random()*2*Math.PI;
+    const radius = Math.random()*120;
+    fw.style.setProperty('--x', Math.cos(angle)*radius+'px');
+    fw.style.setProperty('--y', Math.sin(angle)*radius+'px');
+    fw.style.left = centerX+'px';
+    fw.style.top = centerY+'px';
+    fw.style.background = `hsl(${Math.random()*360},100%,60%)`;
+    document.body.appendChild(fw);
+    setTimeout(()=>fw.remove(),1000);
+  }
+}
+
+function startFireworks(){
+  setInterval(createFirework, 800);
+}
 setBG(1);
 </script>
 
