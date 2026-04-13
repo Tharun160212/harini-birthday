@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Harini ❤️</title>
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  overflow-x: hidden;
+  transition: background 0.8s ease;
+  color: white;
+}
+.page { display:none; padding:20px; animation: fade 1s ease; }
+.active { display:block; }
+
+img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  margin: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  background: #ff4d6d;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+button:hover { background:#e63956; }
+
+@keyframes fade {
+  from {opacity:0; transform: translateY(20px);} 
+  to {opacity:1; transform: translateY(0);} 
+}
+
+/* Gift */
+.gift {
+  width:120px;
+  height:120px;
+  background:pink;
+  margin:50px auto;
+  border-radius:10px;
+  position:relative;
+  cursor:pointer;
+}
+.gift:before {
+  content:"";
+  position:absolute;
+  width:100%;
+  height:20px;
+  background:white;
+  top:45px;
+}
+.gift:after {
+  content:"";
+  position:absolute;
+  width:20px;
+  height:100%;
+  background:white;
+  left:50px;
+}
+.open { animation: openGift 1s forwards; }
+@keyframes openGift {
+  100% { transform:scale(1.5) rotate(10deg); opacity:0; }
+}
+
+/* Cake */
+.cake {
+  margin:40px auto;
+  width:150px;
+  height:100px;
+  background:#ffb6c1;
+  border-radius:10px;
+  position:relative;
+}
+.candle {
+  width:10px;
+  height:30px;
+  background:white;
+  position:absolute;
+  top:-30px;
+  left:70px;
+}
+.flame {
+  width:10px;
+  height:10px;
+  background:orange;
+  border-radius:50%;
+  position:absolute;
+  top:-10px;
+  animation: flicker 0.3s infinite;
+}
+@keyframes flicker {
+  0%{opacity:1;} 50%{opacity:0.5;} 100%{opacity:1;}
+}
+
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 GIFT -->
+<div class="page active" id="p1">
+<h2>Hey Harini 🎁</h2>
+<p>I have something for you...</p>
+<div class="gift" onclick="openGift()"></div>
+<p>Tap the gift 💝</p>
+</div>
+
+<!-- PAGE 2 CAKE -->
+<div class="page" id="p2">
+<h2>Make a wish 🎂✨</h2>
+<div class="cake">
+  <div class="candle">
+    <div class="flame" id="flame"></div>
+  </div>
+</div>
+<p>Blow the candle 💨</p>
+<button onclick="blowCandle()">Blow 🕯️</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="p3">
+<h1>Happy Birthday <b>HARANI</b>🎉</h1>
+<p>"Happy Birthday, Harini💗 I was going to get you a gift, but then I realized being this gorgeous is already a pretty great gift for the rest of us to look at. 😉
+
+In all seriousness, some people make the world a little brighter🌞 just by being in it and you’re definitely one of them. Cheers to another year of you being absolutely breathtaking🥂. Have an amazing day! ✨"</p>
+<button onclick="next(4)">💗</button>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page" id="p4">
+<h2>Some of your picks💕</h2>
+<img src="pic1.jpg"><img src="pic2.jpg">
+<br><button onclick="next(5)">💗</button>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page" id="p5">
+<h2>One thing u always want📸 💕</h2>
+<img src="pic3.jpg"><img src="pic4.jpg">
+<br><button onclick="next(6)">💗</button>
+</div>
+
+<!-- PAGE 6 BEACH -->
+<div class="page" id="p6">
+<h2>The one you always love 🌊💙</h2>
+<img src="pic5.jpg">
+<p>You and the beach… both are calm, beautiful, and special ✨</p>
+<br><button onclick="next(7)">💗</button>
+</div>
+
+<!-- PAGE 7 -->
+<div class="page" id="p7">
+<h2>I always Melt Here 😭</h2>
+<img src="pic6.jpg"><img src="pic7.jpg">
+<p>You are incredible in both western and traditional 💖</p>
+<br><button onclick="next(8)">💗</button>
+</div>
+
+<!-- PAGE 8 -->
+<div class="page" id="p8">
+<h2>I hope you like the gift 🎁</h2>
+<button onclick="next(9)">I loved it😭📸💗</button>
+</div>
+
+<!-- PAGE 9 -->
+<div class="page" id="p9">
+<h2>I want to say something...</h2>
+<button onclick="next(10)">Say 💬</button>
+<button onclick="next(12)">No ❌</button>
+</div>
+
+<!-- PAGE 10 -->
+<div class="page" id="p10">
+<h2>I am so sorry 😔</h2>
+<button onclick="next(11)">Why ❓</button>
+<button onclick="next(13)">It's okay 😊</button>
+</div>
+
+<!-- PAGE 11 -->
+<div class="page" id="p11">
+<p>"I hope you don’t mind, but I took a little 'creative liberty' and borrowed a few of your Instagram photos to build this. I just couldn't find a better way to show off how stunning you are! I hope you love what I did with them." 😔</p>
+<button onclick="next(13)">💗</button>
+</div>
+
+<!-- PAGE 12 -->
+<div class="page" id="p12">
+<h2>It's okay... 😅</h2>
+<p>Once again Happy Birthday 🎉💖✨</p>
+<button onclick="next(13)">💗</button>
+</div>
+
+<!-- FINAL -->
+<div class="page" id="p13">
+<h1>Once again Happy Birthday Harini 🎉💖✨</h1>
+<h3>- Tharun ❤️</h3>
+</div>
+
+<script>
+function setBG(page){
+  const colors = {
+    1:"black",
+    2:"purple",
+    3:"pink",
+    4:"white",
+    5:"pink",
+    6:"skyblue",
+    7:"pink",
+    8:"purple",
+    9:"black",
+    10:"black",
+    11:"black",
+    12:"white",
+    13:"skyblue"
+  };
+  document.body.style.background = colors[page];
+  document.body.style.color = (colors[page]==="white"||colors[page]==="skyblue")?"black":"white";
+}
+
+function next(page){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('p'+page).classList.add('active');
+  setBG(page);
+}
+
+function openGift(){
+  document.querySelector('.gift').classList.add('open');
+  setTimeout(()=> next(2),1000);
+}
+
+function blowCandle(){
+  document.getElementById('flame').style.display='none';
+  setTimeout(()=> next(3),800);
+}
+
+setBG(1);
+</script>
+
+</body>
+</html>
